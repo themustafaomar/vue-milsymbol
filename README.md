@@ -2,6 +2,8 @@
 
 A Vue wrapper component for Milsymbol, for more information please visit [milsymbol](https://github.com/spatialillusions/milsymbol)
 
+⚠️ Attention: This is pre-release alpha version Vue wrapper component for milsymbol, there will be lots of changes coming soon.
+
 ## Installation
 
 To install `vue-milsymbol` you need to install this package via npm.
