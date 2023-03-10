@@ -2,6 +2,14 @@
 
 A Vue wrapper component for Milsymbol, for more information please visit [milsymbol](https://github.com/spatialillusions/milsymbol)
 
+## Installation
+
+To install `vue-milsymbol` you need to install this package via npm.
+
+```js
+npm i vue-milsymbol
+```
+
 ## Quick start
 
 ```js
@@ -17,7 +25,7 @@ new Vue({
 
 In your component just declare `v-milsymbol` then add your options.
 
-```js
+```html
 <template>
   <v-milsymbol
     ref="msymbol"
