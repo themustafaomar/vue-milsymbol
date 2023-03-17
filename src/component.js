@@ -20,8 +20,15 @@ export default {
   }),
   watch: {
     sidc(sidc) {
-      this.milsymbol.setOptions({ sidc })
+      this._setOptions({ sidc })
       this._reRender()
+    },
+    options: {
+      deep: true,
+      handler(options) {
+        this._setOptions(options)
+        this._reRender()
+      }
     }
   },
   mounted() {
@@ -44,6 +51,9 @@ export default {
     },
     _addToDom() {
       this.$el.appendChild(this.milsymbol.asCanvas())
+    },
+    _setOptions(options) {
+      this.milsymbol.setOptions(options)
     }
   }
 }
