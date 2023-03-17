@@ -18,6 +18,12 @@ export default {
   data: () => ({
     milsymbol: null
   }),
+  watch: {
+    sidc(sidc) {
+      this.milsymbol.setOptions({ sidc })
+      this._reRender()
+    }
+  },
   mounted() {
     const { sidc, options } = this.$props
 
@@ -26,11 +32,18 @@ export default {
       ...options
     })
 
-    this.$el.appendChild(this.milsymbol.asCanvas())
+    this._addToDom()
   },
   methods: {
     getInstance() {
       return this.milsymbol
+    },
+    _reRender() {
+      this.$el.innerHTML = ''
+      this._addToDom()
+    },
+    _addToDom() {
+      this.$el.appendChild(this.milsymbol.asCanvas())
     }
   }
 }
