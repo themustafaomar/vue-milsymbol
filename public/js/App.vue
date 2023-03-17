@@ -2,7 +2,7 @@
   <header>
     <v-milsymbol
       ref="msymbol"
-      sidc="sfgpewrh--mt"
+      :sidc="sidc"
       :options="{ size: 50 }"
     >
     </v-milsymbol>
@@ -11,6 +11,9 @@
 
 <script>
 export default {
+  data: () => ({
+    sidc: 'sfgpewrh--mt'
+  }),
   mounted() {
     console.log(this.$refs.msymbol.getInstance())
   }
