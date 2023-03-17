@@ -31,7 +31,7 @@ In your component just declare `v-milsymbol` then add your options.
 <template>
   <v-milsymbol
     ref="msymbol"
-    sidc="sfgpewrh--mt"
+    :sidc="sidc"
     :options="{ size: 50 }"
   >
   </v-milsymbol>
@@ -39,8 +39,15 @@ In your component just declare `v-milsymbol` then add your options.
 
 <script>
 export default {
+  data: () => ({
+    sidc: 'sfgpewrh--mt'
+  }),
   mounted() {
     console.log(this.$refs.msymbol.getInstance())
+
+    // To change symbol automatically you just
+    // need to change the sidc and it'll change Immediately
+    setTimeout(() => this.sidc = '10031000000000000000', 1000)
   }
 }
 </script>
