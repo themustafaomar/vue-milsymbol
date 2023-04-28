@@ -1,6 +1,6 @@
 {
   "name": "vue-milsymbol",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "main": "dist/js/vue-milsymbol.min.js",
   "author": {
     "name": "Mustafa Omar",
@@ -10,8 +10,19 @@
     "serve": "vue-cli-service serve ./public/js/main.js",
     "build": "rollup -c"
   },
-  "keywords": ["milsymbol", "military symbology", "nato symbology", "nato join military symbology", "vue"],
-  "files": ["dist", "src", "LICENCE", "README.md"],
+  "keywords": [
+    "milsymbol",
+    "military symbology",
+    "nato symbology",
+    "nato join military symbology",
+    "vue"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "LICENCE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/themustafaomar/vue-milsymbol.git"
@@ -22,7 +33,7 @@
   "homepage": "https://github.com/themustafaomar/vue-milsymbol#readme",
   "dependencies": {
     "milsymbol": "^2.1.0",
-    "vue": "^2.6.14"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.1",

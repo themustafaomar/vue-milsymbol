@@ -1,13 +1,9 @@
 import ms from 'milsymbol'
+import { defineComponent, h, getCurrentInstance, onMounted } from 'vue'
 import { defaults } from './defaults'
 
-export default {
-  render(h) {
-    return h('div', {
-      staticClass: 'vue--milsymbol',
-      attrs: { id: `vue--milsymbol${this._uid}` }
-    })
-  },
+export default defineComponent({
+  name: 'v-milsymbol',
   props: {
     sidc: String,
     options: {
@@ -31,15 +27,24 @@ export default {
       }
     }
   },
-  mounted() {
-    const { sidc, options } = this.$props
+  setup(props) {
+    const instance = getCurrentInstance()
 
-    this.milsymbol = new ms.Symbol(sidc, {
-      ...defaults,
-      ...options
+    onMounted(() => {
+      const { sidc, options } = props
+
+      instance.data.milsymbol = new ms.Symbol(sidc, {
+        ...defaults,
+        ...options
+      })
+
+      instance.ctx._addToDom()
     })
 
-    this._addToDom()
+    return () => h('div', {
+      id: `vue--milsymbol${instance.uid}`,
+      class: 'vue--milsymbol'
+    })
   },
   methods: {
     getInstance() {
@@ -54,6 +59,6 @@ export default {
     },
     _setOptions(options) {
       this.milsymbol.setOptions(options)
-    }
-  }
-}
+    },
+  },
+})

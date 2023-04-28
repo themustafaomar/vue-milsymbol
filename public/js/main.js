@@ -1,9 +1,10 @@
-import Vue from 'vue'
+import { createApp, h } from 'vue'
 import App from './App'
 import VMilsymbol from '@'
 
-Vue.use(VMilsymbol)
+const app = createApp({
+  render: () => h(App)
+})
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+app.use(VMilsymbol)
+app.mount('#app')
