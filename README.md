@@ -4,6 +4,13 @@ A Vue wrapper component for Milsymbol, for more information please visit [milsym
 
 ⚠️ Attention: This is pre-release alpha version Vue wrapper component for milsymbol, there will be lots of changes coming soon.
 
+## Versions
+
+| Vuejs version | Package version | Branch |
+| :---          |:---------------:| ---:   | 
+| 3.x           |       2.x       | `main` (in development) |
+| 2.x           |       1.x       | [legacy](https://github.com/themustafaomar/vue-milsymbol/tree/legacy) |
+
 ## Installation
 
 To install `vue-milsymbol` you need to install this package via npm.
@@ -15,18 +22,20 @@ npm i vue-milsymbol
 ## Quick start
 
 ```js
-import Vue from 'vue'
+import { createApp, h } from 'vue'
 import VMilsymbol from 'vue-milsymbol'
 
-Vue.use(VMilsymbol, {
+const app = createApp({
+  render: ...
+})
+
+app.use(VMilsymbol, {
   // Set default global options
   // See: https://www.spatialillusions.com/milsymbol/documentation.html
   size: 50
 })
 
-new Vue({
-  render: ...
-}).$mount('#app')
+app.mount('#app')
 ```
 
 In your component just declare `v-milsymbol` then add your options.
